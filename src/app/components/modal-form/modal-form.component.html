@@ -1,0 +1,97 @@
+<div class="modal">
+  <h2 class="title">Добавление данных о экпертах по оценке и руководителей</h2>
+  <div class="close-btn" (click)="closeDialog()">
+    <img src="../../../assets/img/close-icon.svg"/>
+  </div>
+  <form [formGroup]="addForm" class="form" autocomplete="off">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Дата регистрации</mat-label>
+      <input
+        class="form-input"
+        type="text"
+        matInput
+        placeholder="дд.мм.гггг"
+        formControlName="registerDate"
+        [matDatepicker]="picker"
+      />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>ФИО</mat-label>
+      <input
+        class="form-input"
+        type="text"
+        matInput
+        formControlName="fio"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Должность</mat-label>
+      <mat-select
+        class="form-input"
+        formControlName="position">
+        <mat-option *ngFor="let position of positions" [value]="position">
+          {{ position }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Почта(логин)</mat-label>
+      <input
+        class="form-input"
+        type="email"
+        matInput
+        formControlName="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Пароль</mat-label>
+        <input
+          class="form-input"
+          type="text"
+          matInput
+          formControlName="password"
+        />
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Телефон</mat-label>
+      <input
+        class="form-input"
+        type="text"
+        mask="(000) 000 00 00"
+        prefix="+7"
+        matInput
+        formControlName="phoneNumber"
+      />
+    </mat-form-field>
+
+    <button
+      *ngIf="!this.data"
+      class="create-btn"
+      mat-raised-button
+      color="primary"
+      [disabled]="!addForm.valid"
+      (click)="save()"
+    >
+      Сохранить
+    </button>
+    <button
+      *ngIf="this.data"
+      mat-raised-button
+      color="accent"
+      [disabled]="!addForm.valid"
+      (click)="edit()"
+    >
+      Обновить данные пользователя
+    </button>
+  </form>
+</div>
+
+
+

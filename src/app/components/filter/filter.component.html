@@ -1,0 +1,27 @@
+<form [formGroup]="filterForm" class="filter">
+  <mat-form-field class="form-field" appearance="outline">
+    <input
+      (change)="change($event)"
+      class="form-input"
+      type="text"
+      matInput
+      placeholder="Введите ФИО"
+      [(ngModel)]="searchField"
+      formControlName="fio"
+    />
+    <button *ngIf="searchField" class="close-btn" mat-icon-button matSuffix (click)="searchField = ''">
+      <mat-icon class="icon">close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button class="filer-btn"
+          mat-raised-button
+          color="accent"
+          [disabled]="!filterForm.valid"
+          (click)="filter()"
+  >
+    Найти
+  </button>
+</form>
+
+

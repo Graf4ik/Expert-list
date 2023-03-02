@@ -1,0 +1,14 @@
+<div class="confirm-dialog">
+  <div class="close-btn" (click)="closeDialog()">
+    <img src="../../../assets/img/close-icon.svg"/>
+  </div>
+  <p class="message">
+    Вы действительно хотите удалить пользователя <strong>{{ data.fio }}</strong>
+  </p>
+  <div class="buttons">
+    <button class="btn" mat-raised-button color="warn" (click)="confirmDelete()">Да</button>
+    <button class="btn" mat-raised-button color="primary" (click)="closeDialog()">Отмена</button>
+  </div>
+</div>
+
+

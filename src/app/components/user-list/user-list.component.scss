@@ -1,0 +1,40 @@
+@import "./src/variables.scss";
+
+.title {
+  margin-top: 10px;
+  text-align: center;
+  color: $primary-color;
+}
+
+.list {
+  width: 1000px;
+
+  .empty-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .create-btn {
+      margin-top: 15px;
+    }
+  }
+
+  .action-btn {
+    margin: 0 3px;
+
+    img {
+      width: 25px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

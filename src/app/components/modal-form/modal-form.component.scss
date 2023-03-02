@@ -1,0 +1,35 @@
+@import "./src/variables.scss";
+
+.modal {
+
+  .title {
+    color: $primary-color;
+    margin: 35px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 555px;
+
+    .form-field {
+      width: 300px;
+    }
+  }
+
+  .select {
+    width: 80%;
+  }
+
+  .close-btn img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
